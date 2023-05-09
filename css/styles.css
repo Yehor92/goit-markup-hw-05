@@ -95,6 +95,7 @@ img {
   gap: 40px;
 }
 .list-nav-item {
+  position: relative;
   list-style: none;
 }
 .link-item {
@@ -107,11 +108,27 @@ img {
   text-decoration: none;
   color: var(--color-navy-blue);
 }
-.link-item:active,
+
 .link-item:hover,
 .link-item:focus {
   color: var(--color-ocean);
 }
+
+.link-item::after {
+  content: "";
+
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+.link-item.active::after {
+  background-color: var(--color-ocean);
+}
+
 .header-address {
   margin-left: auto;
   font-style: normal;
@@ -521,6 +538,10 @@ img {
   display: flex;
   gap: 40px;
 }
+
+.list-portfolio-item {
+  position: relative;
+}
 .portfolio-item {
   font-weight: 500;
   font-size: 16px;
@@ -531,11 +552,26 @@ img {
   text-decoration: none;
   color: var(--color-navy-blue);
 }
-.portfolio-item:active,
+
 .portfolio-item:hover,
 .portfolio-item:focus {
   color: var(--color-ocean);
 }
+.portfolio-item::after {
+  content: "";
+
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+.portfolio-item.active::after {
+  background-color: var(--color-ocean);
+}
+
 .address {
   margin-left: auto;
   font-style: normal;
@@ -605,6 +641,28 @@ img {
 .item-app {
   width: calc((100% - 48px) / 3);
 }
+
+.item-thumb {
+  position: relative;
+}
+
+/* overlay */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+
+  background-color: #4d5ae5;
+}
+.overlay-text {
+  color: #f4f4fd;
+}
+
 .link-p {
   display: block;
   text-decoration: none;
@@ -667,4 +725,58 @@ img {
   max-width: 264px;
   letter-spacing: 0.02em;
   color: var(--color-cloud);
+}
+
+/**
+  |============================
+  | Modal window
+  |============================
+*/
+.backdrop {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: calc(50% - 250px);
+  left: calc(50% - 225px);
+
+  width: 450px;
+  height: 500px;
+
+  background-color: #fcfcfc;
+  border-radius: 4px;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #e7e9fc;
+}
+.modal-close-icon {
+  fill: #2e2f42;
 }
