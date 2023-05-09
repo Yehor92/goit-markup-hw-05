@@ -99,6 +99,7 @@ img {
   list-style: none;
 }
 .link-item {
+  position: relative;
   font-weight: 500;
   font-size: 16px;
   padding: 24px 0;
@@ -347,10 +348,6 @@ img {
   gap: 24px;
 }
 
-.socials-item {
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .socials-link {
   display: flex;
   justify-content: center;
@@ -359,6 +356,7 @@ img {
   height: 40px;
   background-color: var(--color-iris);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials-link:hover,
 .socials-link:focus {
@@ -398,6 +396,9 @@ img {
   height: 100%;
   border: 1px solid #8e8f99;
   border-radius: 4px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   display: flex;
   align-items: center;
@@ -484,6 +485,8 @@ img {
   height: 100%;
   background-color: var(--color-iris);
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   display: flex;
   align-items: center;
